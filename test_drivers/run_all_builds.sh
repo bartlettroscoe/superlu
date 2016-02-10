@@ -6,7 +6,6 @@
 #
 #   mkdir <some_dir>
 #   env TPL_BLAS_LIBRARIES=<some_dir_1>/libblas.so \
-#     TPL_LAPACK_LIBRARIES=<some_dir_2>/liblapack.so \
 #     <this_dir>/run_all_builds.sh
 #
 # If a test case passes, it is silent.  If it fails, it returns FAILED
@@ -25,7 +24,7 @@ $_SCRIPT_DIR/serial_default_blas_shared_libs.sh
 $_SCRIPT_DIR/serial_default_blas_static_libs.sh
 
 echo ""
-echo "2) Serial with override of default system BLAS/LAPACK (requires TPL_BLAS_LIBRARIES and TPL_LAPACK_LIBRARIES set in env)"
+echo "2) Serial with override of default system BLAS/LAPACK (requires TPL_BLAS_LIBRARIES set in env)"
 
 $_SCRIPT_DIR/serial_override_blas_shared_libs.sh
 $_SCRIPT_DIR/serial_override_blas_static_libs.sh
@@ -37,7 +36,7 @@ $_SCRIPT_DIR/serial_internal_cblas_shared_libs.sh
 $_SCRIPT_DIR/serial_internal_cblas_static_libs.sh
 
 echo ""
-echo "4) MPI with override of default system BLAS/LAPACK (requires TPL_BLAS_LIBRARIES and TPL_LAPACK_LIBRARIES set in env)"
+echo "4) MPI with override of default system BLAS/LAPACK (requires TPL_BLAS_LIBRARIES set in env)"
 
 $_SCRIPT_DIR/mpi_override_blas_shared_libs.sh
 $_SCRIPT_DIR/mpi_override_blas_static_libs.sh
